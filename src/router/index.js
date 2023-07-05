@@ -1,25 +1,26 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// By Author 
+//   Farhan Alifviandi
+//     213510299
+
+import { createRouter, createWebHistory } from 'vue-router';
+
+import Weather from '../components/Weather.vue';
+import Location from '../components/Location.vue';
+import Stopwatch from '../components/Stopwatch.vue';
+import TicTacToe from '../components/TicTacToe.vue';
+import Photo from '../components/Photo.vue';
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+  { path: '/', component: Weather },
+  { path: '/location', component: Location },
+  { path: '/stopwatch', component: Stopwatch },
+  { path: '/tictactoe', component: TicTacToe },
+  { path: '/photo', component: Photo },
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;
